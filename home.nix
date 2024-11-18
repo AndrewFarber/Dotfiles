@@ -46,10 +46,6 @@ in {
       lg = "lazygit";
       ld = "lazydocker";
 
-      tn = "tmux new-session";
-      tk = "tmux kill-session";
-      tl = "tmux list-sessions";
-      ta = "tmux attach-session";
     };
     initExtra = ''
       eval "$(starship init zsh)"
@@ -100,19 +96,6 @@ in {
       vim-sleuth
 
     ];
-  };
-
-  programs.tmux = {
-    enable = true;
-    shell = "${pkgs.zsh}/bin/zsh";
-    terminal = "tmux-256color";
-    prefix = "C-a";
-    baseIndex = 1;
-    extraConfig = ''
-      set-option -g status-position top
-      set-option -g status-style bg=default
-      set-option -ag terminal-overrides ",xterm-256color:RGB"
-    '';
   };
 
   home.file = {
