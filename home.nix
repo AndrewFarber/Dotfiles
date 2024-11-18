@@ -94,6 +94,7 @@ in {
       telescope-nvim
       tokyonight-nvim
       vim-sleuth
+      which-key-nvim
 
     ];
   };
