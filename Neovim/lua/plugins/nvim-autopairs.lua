@@ -1,3 +1,5 @@
+-- GitHub Repository: https://github.com/windwp/nvim-autopairs
+-- Description: Auto pair plugin for Neovim
 local autopairs = require("nvim-autopairs")
 
 autopairs.setup({

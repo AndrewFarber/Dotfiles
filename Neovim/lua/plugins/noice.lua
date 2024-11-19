@@ -1,3 +1,5 @@
+-- GitHub Repository: https://github.com/folke/noice.nvim
+-- Description: Experimental UI plugin for messages, cmdline, and the popupmenu
 require("noice").setup({
   lsp = {
     override = {
@@ -14,3 +16,4 @@ require("noice").setup({
     lsp_doc_border = false,       -- add a border to hover docs and signature help
   },
 })
+
