@@ -33,19 +33,16 @@ in {
   programs.zsh = {
     enable = true;
     shellAliases = {
-
-      hms = "home-manager switch --flake " + Dotfiles;
+      hme = "home-manager expire-generations";
       hmg = "home-manager generations";
       hmr = "home-manager rollback";
-      hme = "home-manager expire-generations";
-      ncg = "nix-collect-garbage";
-
+      hms = "home-manager switch --flake " + Dotfiles;
+      ld = "lazydocker";
+      lg = "lazygit";
       ll = "eza --header --long --icons";
       lt = "eza --tree --icons";
-
-      lg = "lazygit";
-      ld = "lazydocker";
-
+      ncg = "nix-collect-garbage";
+      env-python = "nix-shell ~/Nix-Shells/python.nix";
     };
     initExtra = ''
       eval "$(starship init zsh)"
@@ -103,6 +100,7 @@ in {
     ".config/starship.toml".source = ./Starship/starship.toml;
     ".config/nvim/init.lua".source = ./Neovim/init.lua;
     ".config/nvim/lua".source = ./Neovim/lua;
+    "Nix-Shells".source = ./Nix-Shells;
   };
 
 }
