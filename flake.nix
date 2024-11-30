@@ -13,10 +13,27 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in {
+
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs;
         modules = [ ./home.nix ];
       };
+
+      python-shell = pkgs.mkShell {
+        name = "python";
+        buildInputs = [
+          pkgs.python312
+          pkgs.python312Packages.pip
+          pkgs.python312Packages.mypy
+          pkgs.python312Packages.uv
+          pkgs.python312Packages.ruff
+        ];
+        shell = pkgs.zsh;
+        shellHook = ''
+          exec ${pkgs.zsh}/bin/zsh
+        '';
+      };
+
     };
 }
 

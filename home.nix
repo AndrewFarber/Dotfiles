@@ -42,7 +42,7 @@ in {
       ll = "eza --header --long --icons";
       lt = "eza --tree --icons";
       ncg = "nix-collect-garbage";
-      env-python = "nix-shell ~/Nix-Shells/python.nix";
+      python-shell = "nix develop " + Dotfiles + "#python-shell";
     };
     initExtra = ''
       eval "$(starship init zsh)"
@@ -100,7 +100,6 @@ in {
     ".config/starship.toml".source = ./Starship/starship.toml;
     ".config/nvim/init.lua".source = ./Neovim/init.lua;
     ".config/nvim/lua".source = ./Neovim/lua;
-    "Nix-Shells".source = ./Nix-Shells;
   };
 
 }
