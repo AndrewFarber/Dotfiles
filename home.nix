@@ -42,6 +42,7 @@ in {
       ll = "eza --header --long --icons";
       lt = "eza --tree --icons";
       ncg = "nix-collect-garbage";
+      python-shell-empty = "nix develop " + Dotfiles + "#python-shell-empty";
       python-shell = "nix develop " + Dotfiles + "#python-shell";
     };
     initExtra = ''
