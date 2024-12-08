@@ -30,6 +30,7 @@ in {
 
   ];
 
+  # Shell
   programs.zsh = {
     enable = true;
     shellAliases = {
@@ -50,6 +51,7 @@ in {
     '';
   };
 
+  # Git
   programs.git = {
     enable = true;
     userName = "Andrew Farber";
@@ -59,6 +61,7 @@ in {
     };
   };
 
+  # Neovim
   programs.neovim = {
     enable = true;
     defaultEditor = true;
