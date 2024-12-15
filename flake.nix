@@ -9,7 +9,7 @@
 
   outputs = { self, nixpkgs, home-manager }:
     let
-      username = "andrew";
+      username = "afarber";
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in {
