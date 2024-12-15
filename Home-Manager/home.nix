@@ -101,9 +101,9 @@ in {
   };
 
   home.file = {
-    ".config/starship.toml".source = ./Starship/starship.toml;
-    ".config/nvim/init.lua".source = ./Neovim/init.lua;
-    ".config/nvim/lua".source = ./Neovim/lua;
+    ".config/starship.toml".source = ../Dotfiles/Starship/starship.toml;
+    ".config/nvim/init.lua".source = ../Dotfiles/Neovim/init.lua;
+    ".config/nvim/lua".source = ../Dotfiles/Neovim/lua;
   };
 
 }
