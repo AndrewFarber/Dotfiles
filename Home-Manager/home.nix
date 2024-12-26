@@ -1,9 +1,6 @@
-{ config, pkgs, ... }:
+{ username, pkgs, ... }:
 
-let
-  username = "afarber";
-  Dotfiles = "${config.home.homeDirectory}/Dotfiles";
-in {
+{
 
   home.stateVersion = "24.05";
   home.username = "${username}";
@@ -28,77 +25,10 @@ in {
     nil                       # Nix
     pyright                   # Python
 
+    # Other
+    xclip
+
   ];
-
-  # Shell
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      hme = "home-manager expire-generations";
-      hmg = "home-manager generations";
-      hmr = "home-manager rollback";
-      hms = "home-manager switch --flake " + Dotfiles;
-      ld = "lazydocker";
-      lg = "lazygit";
-      ll = "eza --header --long --icons";
-      lt = "eza --tree --icons";
-      ncg = "nix-collect-garbage";
-      python-shell-empty = "nix develop " + Dotfiles + "#python-shell-empty";
-      python-shell = "nix develop " + Dotfiles + "#python-shell";
-    };
-    initExtra = ''
-      eval "$(starship init zsh)"
-    '';
-  };
-
-  # Git
-  programs.git = {
-    enable = true;
-    userName = "Andrew Farber";
-    userEmail = "Andrew.Farber@outlook.com";
-    extraConfig = {
-      credential.helper = "store";
-    };
-  };
-
-  # Neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    plugins = with pkgs.vimPlugins; [
-
-      # Dependencies
-      cmp-buffer
-      cmp-cmdline
-      cmp-nvim-lsp
-      cmp-path
-      cmp-vsnip
-      nui-nvim
-      nvim-notify
-      nvim-web-devicons
-      plenary-nvim
-      telescope-fzf-native-nvim
-      telescope-ui-select-nvim
-      vim-vsnip
-
-      # Core
-      comment-nvim
-      gitsigns-nvim
-      harpoon2
-      lualine-nvim
-      noice-nvim
-      nvim-autopairs
-      nvim-cmp
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      oil-nvim
-      telescope-nvim
-      tokyonight-nvim
-      vim-sleuth
-      which-key-nvim
-
-    ];
-  };
 
   home.file = {
     ".config/starship.toml".source = ../Dotfiles/Starship/starship.toml;

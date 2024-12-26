@@ -10,13 +10,21 @@
   outputs = { self, nixpkgs, home-manager }:
     let
       username = "afarber";
+      name = "Andrew Farber";
+      email = "Andrew.Farber@outlook.com";
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in {
 
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgs;
-        modules = [ ./Home-Manager/home.nix ];
+        modules = [
+          (import ./Home-Manager/git.nix { name = name; email = email; })
+          (import ./Home-Manager/home.nix { username = username; pkgs = pkgs;})
+          ./Home-Manager/neovim.nix
+          ./Home-Manager/tmux.nix
+          ./Home-Manager/zsh.nix
+        ];
       };
 
       python-shell-empty = import ./Nix-Shells/python-shell-empty.nix { inherit pkgs; };
