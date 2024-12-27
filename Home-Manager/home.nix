@@ -19,14 +19,12 @@
     ripgrep                   # Faster grep
     starship                  # Customizable prompt
     tldr                      # Community-maintained help pages
+    xclip                     # Clipboard
 
     # Language Server Protocols (LSPs)
     lua-language-server       # Lua
     nil                       # Nix
     pyright                   # Python
-
-    # Other
-    xclip
 
   ];
 

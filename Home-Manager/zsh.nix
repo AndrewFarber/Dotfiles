@@ -15,8 +15,12 @@ in
       ll = "eza --header --long --icons";
       lt = "eza --tree --icons";
       ncg = "nix-collect-garbage";
-      python-shell-empty = "nix develop " + Dotfiles + "#python-shell-empty";
       python-shell = "nix develop " + Dotfiles + "#python-shell";
+      python-shell-empty = "nix develop " + Dotfiles + "#python-shell-empty";
+      ta = "tmux attach-session";
+      tk = "tmux kill-session";
+      tl = "tmux list-sessions";
+      tn = "tmux new-session";
     };
     initExtra = ''
       eval "$(starship init zsh)"

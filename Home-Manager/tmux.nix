@@ -10,6 +10,7 @@
     extraConfig = ''
       set-option -g status-position top
       set-option -g status-style bg=default
+      set-option -ag terminal-overrides ",xterm-256color:RGB"
     '';
   };
 }
