@@ -29,6 +29,8 @@
       nvim-autopairs
       nvim-cmp
       nvim-lspconfig
+      nvim-navbuddy
+      nvim-navic
       nvim-treesitter.withAllGrammars
       oil-nvim
       telescope-nvim

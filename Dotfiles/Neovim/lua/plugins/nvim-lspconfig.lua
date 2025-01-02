@@ -1,13 +1,29 @@
 -- GitHub Repository: https://github.com/neovim/nvim-lspconfig
 -- Description: "Data only" repository providing basic Neovim LSP defaults
 local lspconfig = require('lspconfig')
+local navic = require('nvim-navic')
+local navbuddy = require('nvim-navbuddy')
 
 -- LSP configurations
-lspconfig.pyright.setup({})
+lspconfig.pyright.setup({
+  on_attach = function(client, bufnr)
+    navic.attach(client, bufnr)
+    navbuddy.attach(client, bufnr)
+  end
+})
 
-lspconfig.nil_ls.setup({})
+lspconfig.nil_ls.setup({
+  on_attach = function(client, bufnr)
+    navic.attach(client, bufnr)
+    navbuddy.attach(client, bufnr)
+  end
+})
 
 lspconfig.lua_ls.setup({
+  on_attach = function(client, bufnr)
+    navic.attach(client, bufnr)
+    navbuddy.attach(client, bufnr)
+  end,
   settings = {
     Lua = {
       diagnostics = {
@@ -58,6 +74,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Code actions
     map('<leader>c', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
+
+    map('<leader>o', "<CMD>Navbuddy<CR>", "Outline")
 
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
