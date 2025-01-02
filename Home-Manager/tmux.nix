@@ -11,7 +11,6 @@
       set-option -g mode-keys vi
       set-option -g status-position top
       set-option -g status-style bg=default
-      set-option -g status-left "Session: #S "
       set-option -g status-right ""
       set-option -ag terminal-overrides ",xterm-256color:RGB"
     '';
