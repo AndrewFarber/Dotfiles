@@ -17,7 +17,7 @@
     lazydocker                # Simple terminal UI for docker
     lazygit                   # Simple terminal UI for git
     ripgrep                   # Faster grep
-    starship                  # Customizable prompt
+    starship                  # Prompt
     tldr                      # Community-maintained help pages
     xclip                     # Clipboard
 
