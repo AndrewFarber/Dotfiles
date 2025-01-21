@@ -10,7 +10,7 @@ require('lualine').setup({
     lualine_z = {'location'}
   },
   winbar = {
-    lualine_a = { "filename" },
+    lualine_a = { {"filename", path = 3} },
     lualine_c = { { "navic", color_correction = nil, navic_opts = nil } }
   }
 })
