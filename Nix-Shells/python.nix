@@ -4,7 +4,6 @@ pkgs.mkShell {
   name = "python";
   buildInputs = [
     pkgs.python312
-
     pkgs.python312Packages.alembic
     pkgs.python312Packages.cvxpy
     pkgs.python312Packages.fastapi
@@ -29,7 +28,6 @@ pkgs.mkShell {
     pkgs.python312Packages.statsmodels
     pkgs.python312Packages.uv
     pkgs.python312Packages.uvicorn
-
   ];
   shell = pkgs.zsh;
   shellHook = ''

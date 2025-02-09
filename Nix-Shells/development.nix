@@ -1,7 +1,7 @@
 { pkgs, ...}:
 
 pkgs.mkShell {
-  name = "python";
+  name = "development";
   buildInputs = [
     pkgs.python312
     pkgs.python312Packages.uv

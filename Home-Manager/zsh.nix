@@ -15,8 +15,9 @@ in
       ll = "eza --header --long --icons";
       lt = "eza --tree --icons";
       ncg = "nix-collect-garbage";
+      ai-shell = "nix develop " + Dotfiles + "#ai-shell";
       python-shell = "nix develop " + Dotfiles + "#python-shell";
-      python-shell-empty = "nix develop " + Dotfiles + "#python-shell-empty";
+      development-shell = "nix develop " + Dotfiles + "#development-shell";
       ta = "tmux attach-session";
       tk = "tmux kill-session";
       tl = "tmux list-sessions";

@@ -13,7 +13,11 @@
       name = "Andrew Farber";
       email = "Andrew.Farber@outlook.com";
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        # config.cudaSupport = true;
+      };
     in {
 
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
@@ -27,8 +31,9 @@
         ];
       };
 
-      python-shell-empty = import ./Nix-Shells/python-shell-empty.nix { inherit pkgs; };
-      python-shell = import ./Nix-Shells/python-shell.nix { inherit pkgs; };
+      development-shell = import ./Nix-Shells/development.nix { inherit pkgs; };
+      python-shell = import ./Nix-Shells/python.nix { inherit pkgs; };
+      ai-shell = import ./Nix-Shells/ai.nix { inherit pkgs; };
     };
 }
 
