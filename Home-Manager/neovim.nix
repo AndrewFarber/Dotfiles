@@ -32,6 +32,7 @@
       nvim-lspconfig
       nvim-navbuddy
       nvim-navic
+      nvim-treesitter-textobjects
       nvim-treesitter.withAllGrammars
       oil-nvim
       telescope-nvim
